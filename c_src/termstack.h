@@ -5,6 +5,7 @@
 #define TERMSTACK_H
 
 #include "erl_nif.h"
+#include "erl_nif_api_funcs.h"
 
 #ifdef _WIN32
 #define JIFFY_EXPORT __declspec(dllexport)
