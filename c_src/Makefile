@@ -38,9 +38,11 @@ else ifeq ($(UNAME_SYS), FreeBSD)
 	CXXFLAGS ?= -O3 -Wall
 else ifeq ($(UNAME_SYS), Linux)
 	CC ?= gcc
-	CFLAGS ?= -fPIC -O3 -std=c99 -Wall -Wmissing-prototypes
-	CXXFLAGS ?= -fPIC -O3 -Wall
-	LDFLAGS ?= -shared
+	CFLAGS ?= -O3 -std=c99 -Wall -Wmissing-prototypes
+	CXXFLAGS ?= -O3 -Wall
+	CFLAGS += -fPIC
+	CXXFLAGS += -fPIC
+	LDFLAGS += -shared
 endif
 
 CFLAGS += -I $(ERTS_INCLUDE_DIR) -I $(ERL_INTERFACE_INCLUDE_DIR)
